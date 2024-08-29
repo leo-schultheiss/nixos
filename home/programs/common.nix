@@ -1,7 +1,7 @@
 {
   lib,
   pkgs,
-  catppuccin-bat,
+  #catppuccin-bat,
   ...
 }: {
   home.packages = with pkgs; [

@@ -21,6 +21,11 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    catppuccin-bat = {
+      url = "github:catppuccin/bat";
+      flake = false;
+    };
   };
 
   outputs = inputs @ { 
@@ -30,7 +35,7 @@
     ... 
   }: {
     nixosConfigurations = {
-      default = let 
+      laptop = let
         username = "leo";
         specialArgs = {inherit username;};
       in
@@ -38,7 +43,7 @@
           inherit specialArgs;
 
           modules = [
-            ./hosts/default
+            ./hosts/laptop
             ./users/${username}/nixos.nix
 
             home-manager.nixosModules.home-manager {
@@ -51,4 +56,5 @@
           ];
         };
     };
+  };
 }
