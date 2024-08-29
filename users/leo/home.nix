@@ -2,9 +2,10 @@
 
 {
   imports = [
-     ../../home/default.nix
+    ../../home/default.nix
 
-     ../../home/programs
+    ../../home/programs
+    ../../home/shell
   ];
 
   programs.git = {
