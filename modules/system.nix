@@ -66,19 +66,9 @@
     LC_TIME = "de_DE.UTF-8";
   };
 
-  # Enable the X11 windowing system.
-  # You can disable this if you're only using the Wayland session.
   services.xserver.enable = true;
-
-  # Enable the KDE Plasma Desktop Environment.
   services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true;
-
-  # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "us";
-    variant = "";
-  };
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
@@ -113,9 +103,6 @@
 
   #programs.dconf.enable = true;
 
-  # Install fish
-  programs.fish.enable = true;
-
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
@@ -139,15 +126,15 @@
     wget
     curl
     git
-    fish
     sysstat
     lm_sensors # for `sensors` command
     neofetch
+    xfce.thunar # xfce4's file manager
     nnn # terminal file manager
   ];
 
   # Enable sound with pipewire.
-  sound.enable = true;
+#   sound.enable = true;
   hardware.pulseaudio.enable = false;
   services.power-profiles-daemon = {
     enable = true;
@@ -172,6 +159,6 @@
       #media-session.enable = true;
     };
 
-#     udev.packages = with pkgs; [gnome.gnome-settings-daemon];
+    udev.packages = with pkgs; [gnome.gnome-settings-daemon];
   };
 }
