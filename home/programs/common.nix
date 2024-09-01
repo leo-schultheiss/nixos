@@ -45,9 +45,9 @@
   ];
 
   programs = {
-    nextcloud-client = {
-      enable = true;
-    };
+#    nextcloud-client = {
+#       enable = true;
+#     };
 
     tmux = {
       enable = true;
