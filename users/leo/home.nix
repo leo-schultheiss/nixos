@@ -22,7 +22,7 @@
     };
 
     firefox = {
-  #      enable = true;
+      enable = true;
       profiles.default = {
         id = 0;
         name = "default";
