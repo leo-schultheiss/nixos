@@ -67,10 +67,6 @@
     LC_TIME = "de_DE.UTF-8";
   };
 
-  services.xserver.enable = true;
-  services.displayManager.sddm.enable = true;
-  services.desktopManager.plasma6.enable = true;
-
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
@@ -102,23 +98,10 @@
     };
   };
 
-  #programs.dconf.enable = true;
-
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   networking.firewall.enable = false;
-
-  # Enable the OpenSSH daemon.
-  services.openssh = {
-    enable = true;
-    settings = {
-      X11Forwarding = true;
-      PermitRootLogin = "no"; # disable root login
-      PasswordAuthentication = false; # disable password login
-    };
-    openFirewall = true;
-  };
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -131,13 +114,13 @@
     sysstat
     lm_sensors # for `sensors` command
     neofetch
-    xfce.thunar # xfce4's file manager
     nnn # terminal file manager
   ];
+
   programs.fish.enable = true;
 
   # Enable sound with pipewire.
-#   sound.enable = true;
+  # sound.enable = true;
   hardware.pulseaudio.enable = false;
   services.power-profiles-daemon = {
     enable = true;
@@ -145,6 +128,40 @@
   security.polkit.enable = true;
 
   services = {
+    # plasma
+    xserver.enable = true;
+    displayManager.sddm.enable = true;
+    desktopManager.plasma6.enable = true;
+
+    # enable touchpad settings
+    libinput = {
+      enable = true;
+
+      # disabling mouse acceleration
+      mouse = {
+        accelProfile = "flat";
+      };
+
+      # disabling touchpad acceleration
+      touchpad = {
+        accelProfile = "flat";
+        clickMethod = "clickfinger";
+        tapping = true;
+        naturalScrolling = true;
+      };
+    };
+
+    # Enable the OpenSSH daemon.
+    openssh = {
+      enable = true;
+      settings = {
+        X11Forwarding = true;
+        PermitRootLogin = "no"; # disable root login
+        PasswordAuthentication = false; # disable password login
+      };
+      openFirewall = true;
+    };
+
     dbus.packages = [pkgs.gcr];
 
     geoclue2.enable = true;
