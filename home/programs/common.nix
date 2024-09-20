@@ -23,6 +23,7 @@
     graphviz
     keepassxc
     nextcloud-client
+    citrix_workspace
 
     # productivity
     obsidian
