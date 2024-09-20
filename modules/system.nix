@@ -12,6 +12,7 @@
     description = username;
     extraGroups = ["networkmanager" "wheel"];
   };
+  users.defaultUserShell = pkgs.fish;
   # given the users in this list the right to specify additional substituters via:
   #    1. `nixConfig.substituers` in `flake.nix`
   #    2. command line args `--options substituers http://xxx`
@@ -123,6 +124,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    fish
     wget
     curl
     git
@@ -132,6 +134,7 @@
     xfce.thunar # xfce4's file manager
     nnn # terminal file manager
   ];
+  programs.fish.enable = true;
 
   # Enable sound with pipewire.
 #   sound.enable = true;
