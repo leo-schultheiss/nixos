@@ -65,23 +65,4 @@
       '';
     };
   };
-
-  accounts.email = {
-    accounts.outlook = {
-      realName = "Leo Schultheiss";
-      address = "leoschultheiss@yahoo.de";
-      userName = "leoschultheiss@yahoo.de";
-      primary = true;
-      imap = {
-        host = "imap.mail.yahoo.com";
-        port = 993;
-      };
-#         passwordCommand = "cat ${config.age.secrets.microsoft.path}";
-      passwordCommand = "test";
-      thunderbird = {
-        enable = true;
-        profiles = [ "${username}" ];
-      };
-    };
-  };
 }
