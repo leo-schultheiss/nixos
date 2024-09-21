@@ -137,6 +137,7 @@
     neofetch
     nnn # terminal file manager
     nixfmt-rfc-style # nix formatter
+    vlc
   ];
 
   programs.fish.enable = true;
