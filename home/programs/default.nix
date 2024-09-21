@@ -4,5 +4,6 @@
     ./common.nix
     ./git.nix
     ./shell.nix
+    ./media.nix
   ];
 }
