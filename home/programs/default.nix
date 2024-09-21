@@ -4,6 +4,5 @@
     ./common.nix
     ./git.nix
     ./shell.nix
- #   ./xdg.nix
   ];
 }
