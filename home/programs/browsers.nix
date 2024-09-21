@@ -95,21 +95,27 @@ in
           "services.sync.prefs.sync.browser.newtabpage.activity-stream.showSponsored" = lock-false;
           "services.sync.prefs.sync.browser.newtabpage.activity-stream.showSponsoredTopSites" = lock-false;
         };
-
-        ExtensionSettings = {
-          "uBlock0@raymondhill.net" = {
-            install_url = "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi";
-            installation_mode = "force_installed";
-          };
-          "keepassxc-browser@keepassxc.org" = {
-            install_url = "https://addons.mozilla.org/firefox/downloads/latest/keepassxc-browser/latest.xpi";
-            installation_mode = "force_installed";
-          };
-          "addon@darkreader.org" = {
-            install_url = "https://addons.mozilla.org/firefox/downloads/latest/darkreader/latest.xpi";
-            installation_mode = "force_installed";
-          };
-        };
+        ExtensionSettings =
+          with builtins;
+          let
+            extension = shortId: uuid: {
+              name = uuid;
+              value = {
+                install_url = "https://addons.mozilla.org/en-US/firefox/downloads/latest/${shortId}/latest.xpi";
+                installation_mode = "normal_installed";
+              };
+            };
+          in
+          listToAttrs [
+            (extension "ublock-origin" "uBlock0@raymondhill.net")
+            (extension "keepassxc-browser" "keepassxc-browser@keepassxc.org")
+            (extension "darkreader" "addon@darkreader.org")
+          ];
+        # To add additional extensions, find it on addons.mozilla.org, find
+        # the short ID in the url (like https://addons.mozilla.org/en-US/firefox/addon/!SHORT_ID!/)
+        # Then, download the XPI by filling it in to the install_url template, unzip it,
+        # run `jq .browser_specific_settings.gecko.id manifest.json` or
+        # `jq .applications.gecko.id manifest.json` to get the UUID
       };
     };
 
