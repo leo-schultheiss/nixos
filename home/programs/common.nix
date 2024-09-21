@@ -26,7 +26,7 @@
     obsidian
 
     # IDE
-#    insomnia
+    jetbrains.idea-community
 
     # cloud native
     docker-compose
