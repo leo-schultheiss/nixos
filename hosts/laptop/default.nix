@@ -5,13 +5,12 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [
-      ../../modules/system.nix
+  imports = [
+    ../../modules/system.nix
 
-      # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+  ];
 
   # Bootloader.
   boot.loader = {
@@ -24,7 +23,7 @@
 
   networking.hostName = "nixos-laptop"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-  
+
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
@@ -34,7 +33,7 @@
 
   # Bluetooth
   hardware.bluetooth = {
-  enable = true;
+    enable = true;
     settings = {
       General = {
         Experimental = true;

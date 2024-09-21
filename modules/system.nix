@@ -3,25 +3,32 @@
   lib,
   username,
   ...
-}: {
+}:
+{
   # ============================= User related =============================
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.${username} = {
     isNormalUser = true;
     description = username;
-    extraGroups = ["networkmanager" "wheel"];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
   };
   users.defaultUserShell = pkgs.fish;
   # given the users in this list the right to specify additional substituters via:
   #    1. `nixConfig.substituers` in `flake.nix`
   #    2. command line args `--options substituers http://xxx`
-  nix.settings.trusted-users = [username];
+  nix.settings.trusted-users = [ username ];
 
   # customise /etc/nix/nix.conf declaratively via `nix.settings`
   nix.settings = {
     # enable flakes globally
-    experimental-features = ["nix-command" "flakes"];
+    experimental-features = [
+      "nix-command"
+      "flakes"
+    ];
 
     substituters = [
       # cache mirror located in China
@@ -81,7 +88,12 @@
       noto-fonts-emoji
 
       # nerdfonts
-      (nerdfonts.override {fonts = ["FiraCode" "JetBrainsMono"];})
+      (nerdfonts.override {
+        fonts = [
+          "FiraCode"
+          "JetBrainsMono"
+        ];
+      })
     ];
 
     # use fonts specified by user rather than default ones
@@ -91,10 +103,19 @@
     # the reason there's Noto Color Emoji everywhere is to override DejaVu's
     # B&W emojis that would sometimes show instead of some Color emojis
     fontconfig.defaultFonts = {
-      serif = ["Noto Serif" "Noto Color Emoji"];
-      sansSerif = ["Noto Sans" "Noto Color Emoji"];
-      monospace = ["JetBrainsMono Nerd Font" "Noto Color Emoji"];
-      emoji = ["Noto Color Emoji"];
+      serif = [
+        "Noto Serif"
+        "Noto Color Emoji"
+      ];
+      sansSerif = [
+        "Noto Sans"
+        "Noto Color Emoji"
+      ];
+      monospace = [
+        "JetBrainsMono Nerd Font"
+        "Noto Color Emoji"
+      ];
+      emoji = [ "Noto Color Emoji" ];
     };
   };
 
@@ -163,7 +184,7 @@
       openFirewall = true;
     };
 
-    dbus.packages = [pkgs.gcr];
+    dbus.packages = [ pkgs.gcr ];
 
     geoclue2.enable = true;
 
@@ -180,6 +201,6 @@
       #media-session.enable = true;
     };
 
-    udev.packages = with pkgs; [gnome.gnome-settings-daemon];
+    udev.packages = with pkgs; [ gnome.gnome-settings-daemon ];
   };
 }

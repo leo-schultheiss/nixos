@@ -1,8 +1,8 @@
-{ 
-  config, 
-  pkgs, 
-   username,
-  ... 
+{
+  config,
+  pkgs,
+  username,
+  ...
 }:
 let
   lock-false = {
@@ -17,45 +17,49 @@ let
     Value = "";
     Status = "locked";
   };
-in {
+in
+{
   programs = {
     firefox = {
       enable = true;
 
-       profiles.${username} = {
-                                       id = 0;
-                                       name = "default";
-                                       isDefault = true;
-                                       settings = {
-                                         "browser.startup.homepage" = "https://duckduckgo.com";
-                                         "browser.search.defaultenginename" = "DuckDuckGo";
-                                         "browser.search.order.1" = "DuckDuckGo";
-                                         "signon.rememberSignons" = false;
+      profiles.${username} = {
+        id = 0;
+        name = "default";
+        isDefault = true;
+        settings = {
+          "browser.startup.homepage" = "https://duckduckgo.com";
+          "browser.search.defaultenginename" = "DuckDuckGo";
+          "browser.search.order.1" = "DuckDuckGo";
+          "signon.rememberSignons" = false;
 
-                                         "widget.use-xdg-desktop-portal.file-picker" = 1;
-                                         "browser.aboutConfig.showWarning" = false;
-                                         "browser.compactmode.show" = true;
-                                         "browser.cache.disk.enable" = false; # Be kind to hard drive
+          "widget.use-xdg-desktop-portal.file-picker" = 1;
+          "browser.aboutConfig.showWarning" = false;
+          "browser.compactmode.show" = true;
+          "browser.cache.disk.enable" = false; # Be kind to hard drive
 
-                                         #"mousewheel.default.delta_multiplier_x" = 20;
-                                         #"mousewheel.default.delta_multiplier_y" = 20;
-                                         #"mousewheel.default.delta_multiplier_z" = 20;
-                                       };
-                                       search = {
-                                         force = true;
-                                         default = "DuckDuckGo";
-                                         order = [ "DuckDuckGo" "Google" ];
-                                       };
-                                     };
+          #"mousewheel.default.delta_multiplier_x" = 20;
+          #"mousewheel.default.delta_multiplier_y" = 20;
+          #"mousewheel.default.delta_multiplier_z" = 20;
+        };
+        search = {
+          force = true;
+          default = "DuckDuckGo";
+          order = [
+            "DuckDuckGo"
+            "Google"
+          ];
+        };
+      };
 
-      /* ---- POLICIES ---- */
+      # ---- POLICIES ----
       # Check about:policies#documentation for options.
       policies = {
         "Homepage.Startpage" = "homepage";
         DisableTelemetry = true;
         DisableFirefoxStudies = true;
         EnableTrackingProtection = {
-          Value= true;
+          Value = true;
           Locked = true;
           Cryptomining = true;
           Fingerprinting = true;
@@ -67,10 +71,13 @@ in {
         SearchBar = "unified";
         OfferToSaveLogins = false;
 
-        /* ---- PREFERENCES ---- */
+        # ---- PREFERENCES ----
         # Check about:config for options.
         Preferences = {
-          "browser.contentblocking.category" = { Value = "strict"; Status = "locked"; };
+          "browser.contentblocking.category" = {
+            Value = "strict";
+            Status = "locked";
+          };
           "extensions.pocket.enabled" = lock-false;
           "extensions.screenshots.disabled" = lock-true;
           "browser.topsites.contile.enabled" = lock-false;
@@ -111,10 +118,10 @@ in {
 
     chromium = {
       enable = true;
-      commandLineArgs = ["--enable-features=TouchpadOverscrollHistoryNavigation"];
+      commandLineArgs = [ "--enable-features=TouchpadOverscrollHistoryNavigation" ];
       extensions = [
         # {id = "";}  // extension id, query from chrome web store
       ];
     };
- };
+  };
 }
