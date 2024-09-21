@@ -24,13 +24,5 @@
         isDefault = true;
       };
     };
-
-    fish = {
-      enable = true;
-      interactiveShellInit = ''
-        set fish_greeting # Disable greeting
-        alias reswitch "sudo nixos-rebuild switch --flake ~/nixos#"
-      '';
-    };
   };
 }

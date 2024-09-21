@@ -9,14 +9,12 @@ in
   home.shellAliases = shellAliases;
 
   programs.fish = {
-    enable = true;
-
-    #     enableCompletion = true;
-    #     bashrcExtra = ''
-    #       export PATH="$HOME/.local/bin:$HOME/go/bin:$PATH"
-    #     '';
-    interactiveShellInit = ''
-      set fish_greeting # Disable greeting
-    '';
-  };
+        enable = true;
+        interactiveShellInit = ''
+          set fish_greeting # Disable greeting
+          function reswitch
+              sudo nixos-rebuild switch --flake ~/nixos#$argv
+          end
+        '';
+      };
 }
