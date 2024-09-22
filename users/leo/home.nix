@@ -17,12 +17,5 @@
       userName = "Leo Schultheiss";
       userEmail = "leo.schultheiss@tum.de";
     };
-
-    thunderbird = {
-      enable = true;
-      profiles.leo = {
-        isDefault = true;
-      };
-    };
   };
 }
