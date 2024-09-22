@@ -55,7 +55,10 @@ in
       # ---- POLICIES ----
       # Check about:policies#documentation for options.
       policies = {
-        "Homepage.StartPage" = "previous-session";
+        Homepage = {
+            locked = true;
+            StartPage = "previous-session";
+        };
         DisableTelemetry = true;
         DisableFirefoxStudies = true;
         EnableTrackingProtection = {
