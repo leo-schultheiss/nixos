@@ -50,14 +50,48 @@ in
             "Google"
           ];
         };
+
+        bookmarks = [
+          {
+            name = "Toolbar";
+            toolbar = true;
+            bookmarks = [
+              {
+                name = "Nix Sites";
+                bookmarks = [
+                  {
+                    name = "Nix package manager";
+                    url = "https://en.wikipedia.org/wiki/Nix_package_manager";
+                  }
+                  {
+                    name = "NixOs";
+                    url = "https://en.wikipedia.org/wiki/NixOS";
+                  }
+                  {
+                    name = "MyNixOs";
+                    url = "https://mynixos.com";
+                  }
+                  {
+                    name = "Home Manager";
+                    url = "https://home-manager-options.extranix.com";
+                  }
+                ];
+              }
+              {
+                name = "YouTube";
+                url = "https://youtube.com";
+              }
+            ];
+          }
+        ];
       };
 
       # ---- POLICIES ----
       # Check about:policies#documentation for options.
       policies = {
         Homepage = {
-            locked = true;
-            StartPage = "previous-session";
+          locked = true;
+          StartPage = "previous-session";
         };
         DisableTelemetry = true;
         DisableFirefoxStudies = true;
