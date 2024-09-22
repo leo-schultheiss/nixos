@@ -5,5 +5,6 @@
     ./git.nix
     ./shell.nix
     ./media.nix
+    ./thunderbird.nix
   ];
 }
