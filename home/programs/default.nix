@@ -3,8 +3,8 @@
     ./browsers.nix
     ./common.nix
     ./git.nix
+    ./spotify.nix
     ./shell.nix
-    ./media.nix
     ./thunderbird.nix
   ];
 }
