@@ -78,6 +78,10 @@ in
                 ];
               }
               {
+                name = "Calendar";
+                url = "https://calendar.google.com";
+              }
+              {
                 name = "YouTube";
                 url = "https://youtube.com";
               }
