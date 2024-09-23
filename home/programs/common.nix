@@ -25,9 +25,6 @@
     # productivity
     obsidian
 
-    # IDE
-    jetbrains.idea-community
-
     # cloud native
     docker-compose
   ];
