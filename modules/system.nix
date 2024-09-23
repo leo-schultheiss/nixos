@@ -136,7 +136,6 @@
     lm_sensors # for `sensors` command
     neofetch
     nnn # terminal file manager
-    nixfmt-rfc-style # nix formatter
     vlc
     zoom-us
   ];
