@@ -138,6 +138,7 @@
     nnn # terminal file manager
     nixfmt-rfc-style # nix formatter
     vlc
+    zoom-us
   ];
 
   programs.fish.enable = true;
