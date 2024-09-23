@@ -75,6 +75,10 @@ in
                     name = "Home Manager";
                     url = "https://home-manager-options.extranix.com";
                   }
+                  {
+                    name = "NixOs & Flakes book";
+                    url = "https://nixos-and-flakes.thiscute.world/";
+                  }
                 ];
               }
               {
