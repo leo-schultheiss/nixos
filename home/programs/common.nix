@@ -21,6 +21,7 @@
     keepassxc
     nextcloud-client
     citrix_workspace
+    kcalc
 
     # productivity
     obsidian
