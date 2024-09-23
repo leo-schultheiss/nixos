@@ -17,4 +17,5 @@
       userEmail = "leo.schultheiss@tum.de";
     };
   };
+  services.kdeconnect.enable = true;
 }
