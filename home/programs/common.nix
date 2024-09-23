@@ -12,7 +12,7 @@
 
     # utils
     htop
-    gitkraken
+    tree
 
     # misc
     libnotify

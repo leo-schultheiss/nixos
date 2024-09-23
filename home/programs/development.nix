@@ -10,5 +10,7 @@
     conda # anaconda python package manager
 
     nixfmt-rfc-style # nix formatter
+
+    gitkraken
   ];
 }
