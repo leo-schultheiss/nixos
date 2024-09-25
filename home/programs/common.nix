@@ -22,6 +22,7 @@
     nextcloud-client
     citrix_workspace
     kcalc
+    mullvad-vpn
 
     # productivity
     obsidian
