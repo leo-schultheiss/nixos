@@ -49,5 +49,6 @@
   services = {
     # auto mount usb drives
     udiskie.enable = true;
+    mullvad-vpn.enable = true;
   };
 }
