@@ -33,6 +33,9 @@ mkShell {
     unset SOURCE_DATE_EPOCH
     ./scripts/install_local_packages.sh
   '';
+  shellHook = ''
+  (pycharm-professional . &)
+  '';
   postShellHook = ''
     # Allow the use of wheels.
     unset SOURCE_DATE_EPOCH
