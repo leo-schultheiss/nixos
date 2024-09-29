@@ -22,7 +22,6 @@
     nextcloud-client
     citrix_workspace
     kcalc
-    mullvad-vpn
 
     # productivity
     obsidian
@@ -49,6 +48,5 @@
   services = {
     # auto mount usb drives
     udiskie.enable = true;
-    mullvad-vpn.enable = true;
   };
 }

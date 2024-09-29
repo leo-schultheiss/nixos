@@ -138,6 +138,7 @@
     nnn # terminal file manager
     vlc
     zoom-us
+    mullvad-vpn
   ];
 
   programs.fish.enable = true;
@@ -203,5 +204,7 @@
     };
 
     udev.packages = with pkgs; [ gnome.gnome-settings-daemon ];
+
+    mullvad-vpn.enable = true;
   };
 }
