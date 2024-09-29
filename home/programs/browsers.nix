@@ -56,6 +56,35 @@ in
             name = "Toolbar";
             toolbar = true;
             bookmarks = [
+            {
+                            name = "Tower Sites";
+                            bookmarks = [
+                              {
+                                name = "Dashboard";
+                                url = "http://192.168.0.10:40080";
+                              }
+                              {
+                                name = "Nextcloud";
+                                url = "https://nextcloud.lucidleaf.link";
+                              }
+                              {
+                                name = "Jellyfin";
+                                url = "https://jellyfin.lucidleaf.link";
+                              }
+                              {
+                                name = "Jellyseerr";
+                                url = "https://jellyserr.lucidleaf.link";
+                              }
+                              {
+                                name = "Radarr";
+                                url = "https://radarr.lucidleaf.link";
+                              }
+                              {
+                                name = "Sonarr";
+                                url = "https://sonarr.lucidleaf.link";
+                              }
+                            ];
+                          }
               {
                 name = "Nix Sites";
                 bookmarks = [
