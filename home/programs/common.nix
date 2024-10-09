@@ -22,6 +22,8 @@
     nextcloud-client
     citrix_workspace
     kcalc
+    zotero
+    jellyfin-media-player
 
     # productivity
     obsidian
