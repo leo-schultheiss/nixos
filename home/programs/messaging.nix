@@ -7,5 +7,6 @@
     signal-desktop
     whatsapp-for-linux
     telegram-desktop
+    discord
   ];
 }
