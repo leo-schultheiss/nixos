@@ -56,35 +56,35 @@ in
             name = "Toolbar";
             toolbar = true;
             bookmarks = [
-            {
-                            name = "Tower Sites";
-                            bookmarks = [
-                              {
-                                name = "Dashboard";
-                                url = "http://192.168.0.10:40080";
-                              }
-                              {
-                                name = "Nextcloud";
-                                url = "https://nextcloud.lucidleaf.link";
-                              }
-                              {
-                                name = "Jellyfin";
-                                url = "https://jellyfin.lucidleaf.link";
-                              }
-                              {
-                                name = "Jellyseerr";
-                                url = "https://jellyserr.lucidleaf.link";
-                              }
-                              {
-                                name = "Radarr";
-                                url = "https://radarr.lucidleaf.link";
-                              }
-                              {
-                                name = "Sonarr";
-                                url = "https://sonarr.lucidleaf.link";
-                              }
-                            ];
-                          }
+              {
+                name = "Tower Sites";
+                bookmarks = [
+                  {
+                    name = "Dashboard";
+                    url = "http://192.168.0.10:40080";
+                  }
+                  {
+                    name = "Nextcloud";
+                    url = "https://nextcloud.lucidleaf.link";
+                  }
+                  {
+                    name = "Jellyfin";
+                    url = "https://jellyfin.lucidleaf.link";
+                  }
+                  {
+                    name = "Jellyseerr";
+                    url = "https://jellyserr.lucidleaf.link";
+                  }
+                  {
+                    name = "Radarr";
+                    url = "https://radarr.lucidleaf.link";
+                  }
+                  {
+                    name = "Sonarr";
+                    url = "https://sonarr.lucidleaf.link";
+                  }
+                ];
+              }
               {
                 name = "Nix Sites";
                 bookmarks = [
@@ -184,6 +184,7 @@ in
             (extension "ublock-origin" "uBlock0@raymondhill.net")
             (extension "keepassxc-browser" "keepassxc-browser@keepassxc.org")
             (extension "darkreader" "addon@darkreader.org")
+            (extension "zotero-connector" "zotero@chnm.gmu.edu")
           ];
         # To add additional extensions, find it on addons.mozilla.org, find
         # the short ID in the url (like https://addons.mozilla.org/en-US/firefox/addon/!SHORT_ID!/)
